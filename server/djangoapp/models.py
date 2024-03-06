@@ -7,7 +7,11 @@ class CarMake(models.Model):
     description = models.TextField()
     country = models.TextField()
     year = models.IntegerField(
-        default=2023, validators=[MaxValueValidator(2023), MinValueValidator(1800)]
+        default=2023, 
+        validators=[
+            MaxValueValidator(2023), 
+            MinValueValidator(1800)
+        ]
     )
 
     def __str__(self):
@@ -23,12 +27,24 @@ class CarModel(models.Model):
 
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    type = models.CharField(max_length=10, choices=CAR_TYPES, default="SUV")
+    type = models.CharField(
+        max_length=10, 
+        choices=CAR_TYPES, 
+        default="SUV"
+    )
     year = models.IntegerField(
-        default=2023, validators=[MaxValueValidator(2023), MinValueValidator(2015)]
+        default=2023, 
+        validators=[
+            MaxValueValidator(2023), 
+            MinValueValidator(2015)
+        ]
     )
     price = models.IntegerField(
-        default=10000, validators=[MaxValueValidator(999999999), MinValueValidator(1)]
+        default=10000, 
+        validators=[
+            MaxValueValidator(999999999), 
+            MinValueValidator(1)
+        ]
     )
 
     def __str__(self):

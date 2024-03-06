@@ -117,7 +117,7 @@ app.post('/insert_review', express.raw({
 	const documents = await Reviews.find().sort({
 		id: -1
 	});
-	let new_id = documents[0].id + 1
+	let new_id = documents[0].id + 1;
 
 	const review = new Reviews({
 		"id": new_id,
