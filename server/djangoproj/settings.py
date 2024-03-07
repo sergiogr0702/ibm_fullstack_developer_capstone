@@ -28,9 +28,12 @@ SECRET_KEY = "django-insecure-ccow$tz_=9%dxu4\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# todo: change the urls each time it is deployed 
 ALLOWED_HOSTS = [
     "localhost",
 ]
+
+# todo: change the urls each time it is deployed 
 CSRF_TRUSTED_ORIGINS = []
 
 REST_FRAMEWORK = {
