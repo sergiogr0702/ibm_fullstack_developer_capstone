@@ -7,7 +7,12 @@ import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
 
-from .restapis import analyze_review_sentiments, get_request, post_review, searchcars_request
+from .restapis import (
+    analyze_review_sentiments,
+    get_request,
+    post_review,
+    searchcars_request
+)
 from .models import CarMake, CarModel
 from .populate import initiate
 
@@ -152,7 +157,7 @@ def get_inventory(request, dealer_id):
             endpoint = "/carsbyprice/"+str(dealer_id)+"/"+data['price']
         else:
             endpoint = "/cars/"+str(dealer_id)
- 
+
         cars = searchcars_request(endpoint)
         return JsonResponse({"status": 200, "cars": cars})
     else:
